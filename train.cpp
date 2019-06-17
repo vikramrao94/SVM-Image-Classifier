@@ -117,7 +117,7 @@ void trainBOW(string dir){
   cout<<"BoW clustering complete"<<endl;
 }
 
-map<string,Mat> createTraingImage(vector<string> filenames,vector<string> labels,Mat vocabulary){
+map<string,Mat> createTrainingImage(vector<string> filenames,vector<string> labels,Mat vocabulary){
 
   cout<<"Classifier phase entered"<<endl;
 
@@ -211,12 +211,12 @@ void trainSVM(string trainingDir){
   }
   cout<<"Labels added successfully"<<endl;
 
-  map<string,Mat> mapedImage=createTraingImage(filenames,labels,vocabulary);
+  map<string,Mat> mapedImage=createTrainingImage(filenames,labels,vocabulary);
   trainSVMFinal(mapedImage);
 
 
 }
-int main ( int argc, char** argv )
+int main()
 {
   string trainingDir="training";
   trainBOW(trainingDir);
